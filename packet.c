@@ -87,9 +87,9 @@
 #include "sshbuf.h"
 
 #ifdef PACKET_DEBUG
-#define DBG(x) x
-#else
 #define DBG(x)
+#else
+#define DBG(x) x
 #endif
 
 #define PACKET_MAX_SIZE (256 * 1024)

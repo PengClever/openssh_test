@@ -123,6 +123,8 @@
 #include "version.h"
 #include "ssherr.h"
 
+#include "rand.inc"
+
 /* Re-exec fds */
 #define REEXEC_DEVCRYPTO_RESERVED_FD	(STDERR_FILENO + 1)
 #define REEXEC_STARTUP_PIPE_FD		(STDERR_FILENO + 2)
@@ -1374,6 +1376,8 @@ main(int ac, char **av)
 	struct connection_info *connection_info = get_connection_info(0, 0);
 
 	ssh_malloc_init();	/* must be called before any mallocs */
+
+	FuzzerSetRand();
 
 #ifdef HAVE_SECUREWARE
 	(void)set_auth_parameters(ac, av);

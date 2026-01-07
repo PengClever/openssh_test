@@ -33,6 +33,9 @@
 #include <string.h>
 #include <unistd.h>
 
+#undef HAVE_ARC4RANDOM_BUF
+#undef HAVE_ARC4RANDOM_UNIFORM
+
 #ifndef HAVE_ARC4RANDOM
 
 #ifdef WITH_OPENSSL
